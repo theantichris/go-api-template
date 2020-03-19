@@ -10,6 +10,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	log "github.com/sirupsen/logrus"
+	"github.com/theantichris/go-api-template/handlers"
 	"golang.org/x/net/context"
 )
 
@@ -23,6 +24,8 @@ func main() {
 	}
 
 	router := mux.NewRouter()
+
+	router.HandleFunc("/health", handlers.HealthCheck).Methods(http.MethodGet)
 
 	server := &http.Server{
 		Addr:         "0.0.0.0:" + os.Getenv("PORT"),
