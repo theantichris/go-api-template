@@ -1,4 +1,7 @@
+.env
+
 # Binaries for programs and plugins
+go-mod-template
 *.exe
 *.exe~
 *.dll
